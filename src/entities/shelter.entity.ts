@@ -9,10 +9,10 @@ export class Shelter{
     @Column({nullable:true})
     roomNo:number
 
-    @Column({type:'date',nullable:true})
+    @Column({type:'date'})
     dateOfArrival:string
 
-    @Column({type:'date',nullable:true})
+    @Column({type:'date'})
     dateOfAdoption:string
 
     @OneToOne(()=>Animal,(animal)=> animal.shelter,{cascade:true,eager:true})

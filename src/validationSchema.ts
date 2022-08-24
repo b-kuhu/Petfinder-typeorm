@@ -16,8 +16,8 @@ const ownerSchema = joi.object({
 
 const shelterSchema = joi.object({
     roomNo:joi.number().min(3).required(),
-    dateOfArrival:joi.date().required(),
-    dateOfAdoption:joi.date().required(),
+    dateOfArrival:joi.string().required(),
+    dateOfAdoption:joi.string().required(),
     
 })
 

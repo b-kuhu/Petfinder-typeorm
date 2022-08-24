@@ -20,12 +20,15 @@ static createShelter = async (req: Request, res: Response) => {
     console.log(value); 
     if(owner && animal){
     const newShelter = {  
-       shelterData,
+        roomNo:req.body.roomNo,
+        dateOfArrival:req.body.dateOfArrival,
+        dateOfAdoption:req.body.dateOfAdoption,
         animal,owner
     }
    
     const data = myDataSource.getRepository(Shelter).create(newShelter);
     const result = await myDataSource.getRepository(Shelter).save(data);
+    console.log('data saved');
     res.json({
         message: 'Details Added successfully',
        result
