@@ -14,10 +14,10 @@ const ownerSchema = joi.object({
     address:joi.string().required().min(3).max(30)           
 })
 
-const shelterShema = joi.object({
+const shelterSchema = joi.object({
     roomNo:joi.number().min(3).max(6).required(),
     dateOfArrival:joi.date().required(),
     dateOfAdoption:joi.date().required()
 })
 
-export {animalSchema,ownerSchema,shelterShema};
+export {animalSchema,ownerSchema,shelterSchema};

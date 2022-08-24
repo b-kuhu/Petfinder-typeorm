@@ -3,6 +3,7 @@ import { Owner } from '../entities/owner.entity';
 import { Animal } from '../entities/animal.entity';
 import { Shelter} from '../entities/shelter.entity';
 import { myDataSource} from '../appDataSource';
+import{shelterSchema} from '../validationSchema';
 
 class ShelterController{
 static createShelter = async (req: Request, res: Response) => {
@@ -17,6 +18,8 @@ static createShelter = async (req: Request, res: Response) => {
         dateOfAdoption:req.body.dateOfAdoption,
         animal,owner
     }
+    const value = shelterSchema.validateAsync(newShelter);
+    console.log(value);
     const data = myDataSource.getRepository(Shelter).create(newShelter);
     const result = await myDataSource.getRepository(Shelter).save(data);
     res.json({
@@ -44,13 +47,12 @@ static getOneShelter= async (req: Request, res: Response): Promise<Response> => 
 
 static updateShelter = async (req: Request, res: Response) => {
   
-    //const {animalId,ownerId}=req.params;
-    // const owner =  await myDataSource.getRepository(Owner).findOne({where: {owner_id: parseInt(ownerId, 10)}});
-    // const animal = await myDataSource.getRepository(Animal).findOne({where: {id: parseInt(animalId, 10)}});
-
+   
     const data = await myDataSource.getRepository(Shelter).findOne({where: {id: parseInt(req.params.id, 10)}});   
     
     if (data) {
+        const value = shelterSchema.validateAsync(req.body);
+        console.log(value);
         myDataSource.getRepository(Shelter).merge(data, req.body);
         const result = await myDataSource.getRepository(Shelter).save(data);
         return res.json({message:'Updated Successfully',result});
