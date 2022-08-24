@@ -15,7 +15,9 @@ const ownerSchema = joi.object({
 })
 
 const shelterShema = joi.object({
-    roomNo:joi.alphanum().min(3).max(6).required(),
+    roomNo:joi.number().min(3).max(6).required(),
     dateOfArrival:joi.date().required(),
     dateOfAdoption:joi.date().required()
 })
+
+export {animalSchema,ownerSchema,shelterShema};

@@ -1,16 +1,19 @@
 import { Request, Response } from 'express';
 import { Owner } from '../entities/owner.entity';
 import {myDataSource} from '../appDataSource';
-
+import {ownerSchema} from '../validationSchema';
 
 class OwnerController {
   static createOwner = async (req: Request, res: Response) => {
-    const newAnimal = {
+    const newOwner = {
       owner_name: req.body.owner_name,
       contact: req.body.contact,
       address:req.body.address
     };
-    const animal = myDataSource.getRepository(Owner).create(newAnimal);
+    
+    const value = ownerSchema.validateAsync(newOwner);
+    console.log(value);
+    const animal = myDataSource.getRepository(Owner).create(newOwner);
     const result = await myDataSource.getRepository(Owner).save(animal);
     return res.json(result);
   };
@@ -27,6 +30,8 @@ class OwnerController {
   
     const data = await myDataSource.getRepository(Owner).findOne({where: {owner_id: parseInt(req.params.id, 10)}});
     if (data) {
+      const value = ownerSchema.validateAsync(req.body);
+      console.log(value);
       myDataSource.getRepository(Owner).merge(data, req.body);
       const result = await myDataSource.getRepository(Owner).save(data);
       return res.json(result);
