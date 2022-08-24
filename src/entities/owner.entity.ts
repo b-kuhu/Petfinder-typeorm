@@ -8,8 +8,8 @@ export class Owner{
     @Column()
     owner_name:string
 
-    @Column()
-    contact:number
+    @Column({type:'bigint',nullable:true})
+    contact:string
 
     @Column()
     address:string

@@ -11,15 +11,19 @@ static createShelter = async (req: Request, res: Response) => {
     const {animalId,ownerId}=req.params;
     const owner =  await myDataSource.getRepository(Owner).findOne({where: {owner_id: parseInt(ownerId, 10)}});
     const animal = await myDataSource.getRepository(Animal).findOne({where: {id: parseInt(animalId, 10)}});
-    if(owner && animal){
-    const newShelter = {  
+    const shelterData = {
         roomNo:req.body.roomNo,
         dateOfArrival:req.body.dateOfArrival,
         dateOfAdoption:req.body.dateOfAdoption,
+    }
+    const value = shelterSchema.validateAsync(shelterData);
+    console.log(value); 
+    if(owner && animal){
+    const newShelter = {  
+       shelterData,
         animal,owner
     }
-    const value = shelterSchema.validateAsync(newShelter);
-    console.log(value);
+   
     const data = myDataSource.getRepository(Shelter).create(newShelter);
     const result = await myDataSource.getRepository(Shelter).save(data);
     res.json({

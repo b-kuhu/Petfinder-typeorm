@@ -39,8 +39,16 @@ class OwnerController {
     return res.json({ msg: "Not Found" });
   };
   static deleteOwner = async (req: Request, res: Response) => {
+    try {
+      const data = await myDataSource.getRepository(Owner).findOne({where: {owner_id: parseInt(req.params.id, 10)}});
+     if(data){
     const result = await myDataSource.getRepository(Owner).delete(req.params.id);
     return res.json(result);
+     }
+    } catch (error) {
+         console.log(error);
+    }
+    
   };
 }
 

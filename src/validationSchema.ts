@@ -10,14 +10,15 @@ const animalSchema = joi.object({
 
 const ownerSchema = joi.object({
     owner_name:joi.string() .required().min(3).max(20),
-    contact:joi.number().required().min(10).max(11),
+    contact:joi.string().required().min(10),
     address:joi.string().required().min(3).max(30)           
 })
 
 const shelterSchema = joi.object({
-    roomNo:joi.number().min(3).max(6).required(),
+    roomNo:joi.number().min(3).required(),
     dateOfArrival:joi.date().required(),
-    dateOfAdoption:joi.date().required()
+    dateOfAdoption:joi.date().required(),
+    
 })
 
 export {animalSchema,ownerSchema,shelterSchema};

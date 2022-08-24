@@ -6,13 +6,13 @@ export class Shelter{
     @PrimaryGeneratedColumn()
     id:number;
 
-    @Column()
+    @Column({nullable:true})
     roomNo:number
 
-    @Column({type:'date'})
+    @Column({type:'date',nullable:true})
     dateOfArrival:string
 
-    @Column({type:'date'})
+    @Column({type:'date',nullable:true})
     dateOfAdoption:string
 
     @OneToOne(()=>Animal,(animal)=> animal.shelter,{cascade:true,eager:true})
