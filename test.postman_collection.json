@@ -1,0 +1,1228 @@
+{
+	"info": {
+		"_postman_id": "e95e8b17-00b7-4d2f-9e45-4702607e969a",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21711521"
+	},
+	"item": [
+		{
+			"name": "animals",
+			"item": [
+				{
+					"name": "get animals",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/animals",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"animals"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get animals",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/animals",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-KkNUja/kQCeIBW9CXKVtwyStIP0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 10:36:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"tiger\",\n        \"breed\": \"lab\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"tuffy\",\n        \"breed\": \"husky\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"sam\",\n        \"breed\": \"samoyed\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"bruno\",\n        \"breed\": \"pug\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get animal by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/animals/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"animals",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get animal by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/animals/2",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"animals",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-2Q4w1JIlZ5bFTBUeh4mrJ2aNTNI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 10:56:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"tiger\",\n    \"breed\": \"lab\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create animal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n        \"name\":\"dude\",\n        \"breed\":\"german shephard\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/animals",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"animals"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create animal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \n        \"name\":\"dude\",\n        \"breed\":\"german shephard\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/animals",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-WdRjYTL5qY6tmXvOY0mRZhlVuc8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:09:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"dude\",\n    \"breed\": \"german shephard\",\n    \"id\": 7\n}"
+						}
+					]
+				},
+				{
+					"name": "update animal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"samy\",\n    \"breed\":\"samoyed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/animals/4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"animals",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update animal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"samy\",\n    \"breed\":\"samoyed\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/animals/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"animals",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-0uwSqS4ArGBl8WPeci/bO9X5KYI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:10:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"name\": \"samy\",\n    \"breed\": \"samoyed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete animal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/animals/6",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"animals",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete animal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/animals/6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"animals",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-PVQD/E0HAqMH9FRBYNXdIixTtCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:08:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"raw\": [],\n    \"affected\": 1\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "owners",
+			"item": [
+				{
+					"name": "get owners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/owners",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get owners",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/owners",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"owners"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "427"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ab-3l48jSnv607NcjmQYzteYWKTvWA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:25:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"owner_id\": 6,\n        \"owner_name\": \"ajay bhalla\",\n        \"contact\": \"9384835821\",\n        \"address\": \"avantika\"\n    },\n    {\n        \"owner_id\": 8,\n        \"owner_name\": \"aditya vij\",\n        \"contact\": \"93848351384\",\n        \"address\": \"ram nagar\"\n    },\n    {\n        \"owner_id\": 2,\n        \"owner_name\": \"mahesh\",\n        \"contact\": \"8938562873\",\n        \"address\": \"subhash nagar\"\n    },\n    {\n        \"owner_id\": 4,\n        \"owner_name\": \"divyansh\",\n        \"contact\": \"9839834921\",\n        \"address\": \"gandhi nagar\"\n    },\n    {\n        \"owner_id\": 5,\n        \"owner_name\": \"raj\",\n        \"contact\": \"9876543210\",\n        \"address\": \"kavi nagar\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get owner by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/owners/6",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"owners",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get owner by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/owners/6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"owners",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-ETIwj9CaDlTpXzZPoGBukBNLQEw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:26:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"owner_id\": 6,\n    \"owner_name\": \"ajay bhalla\",\n    \"contact\": \"9384835821\",\n    \"address\": \"avantika\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update owner",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create owner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"owner_name\":\"akshit\",\n    \"contact\":\"93848351385\",\n    \"address\":\"turab nagar\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/owners",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create owner",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"owner_name\":\"akshit\",\n    \"contact\":\"93848351385\",\n    \"address\":\"turab nagar\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/owners",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"owners"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-5ZYQMAbM688bQN0okI/y5G4oAMA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:29:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"owner_name\": \"akshit\",\n    \"contact\": \"93848351385\",\n    \"address\": \"turab nagar\",\n    \"owner_id\": 9\n}"
+						}
+					]
+				},
+				{
+					"name": "delete owner",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/owners/8",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"owners",
+								"8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete owner",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/owners/8",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"owners",
+										"8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-PVQD/E0HAqMH9FRBYNXdIixTtCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:41:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"raw\": [],\n    \"affected\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "update owner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n       \"owner_name\": \"raj\",\n        \"contact\": \"9876543210\",\n        \"address\": \"kavi nagar\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/owners/5",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"owners",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update owner",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"owner_name\": \"divyansh\",\n        \"contact\": \"9839834921\",\n        \"address\": \"gandhi nagar\"\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/owners/4",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"owners",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-Nm7Y4MkK/MKoBgk39ZoLRzFMXQs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:17:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"owner_id\": 4,\n    \"owner_name\": \"divyansh\",\n    \"contact\": \"9839834921\",\n    \"address\": \"gandhi nagar\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "shelter",
+			"item": [
+				{
+					"name": "get shelter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/shelter",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"shelter"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get shelter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/shelter",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"shelter"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "775"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"307-pf3a87uG3oUSJNmuobs2b91KU0o\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:45:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"roomNo\": 390,\n        \"dateOfArrival\": \"2012-10-02\",\n        \"dateOfAdoption\": \"2013-06-23\",\n        \"animal\": null,\n        \"owner\": null\n    },\n    {\n        \"id\": 4,\n        \"roomNo\": 207,\n        \"dateOfArrival\": \"2020-10-10\",\n        \"dateOfAdoption\": \"2020-11-12\",\n        \"animal\": {\n            \"id\": 2,\n            \"name\": \"tiger\",\n            \"breed\": \"lab\"\n        },\n        \"owner\": {\n            \"owner_id\": 2,\n            \"owner_name\": \"mahesh\",\n            \"contact\": \"8938562873\",\n            \"address\": \"subhash nagar\"\n        }\n    },\n    {\n        \"id\": 7,\n        \"roomNo\": 410,\n        \"dateOfArrival\": \"2020-12-21\",\n        \"dateOfAdoption\": \"2021-01-22\",\n        \"animal\": {\n            \"id\": 3,\n            \"name\": \"tuffy\",\n            \"breed\": \"husky\"\n        },\n        \"owner\": {\n            \"owner_id\": 4,\n            \"owner_name\": \"divyansh\",\n            \"contact\": \"9839834921\",\n            \"address\": \"gandhi nagar\"\n        }\n    },\n    {\n        \"id\": 8,\n        \"roomNo\": 375,\n        \"dateOfArrival\": \"2022-10-02\",\n        \"dateOfAdoption\": \"2021-06-13\",\n        \"animal\": {\n            \"id\": 4,\n            \"name\": \"samy\",\n            \"breed\": \"samoyed\"\n        },\n        \"owner\": {\n            \"owner_id\": 5,\n            \"owner_name\": \"raj\",\n            \"contact\": \"9876543210\",\n            \"address\": \"kavi nagar\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get shelter by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/shelter/7",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"shelter",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get shelter by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/shelter/7",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"shelter",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "224"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e0-c6mp9yFdi2uYiLTr99TYHw4nb48\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:46:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"roomNo\": 410,\n    \"dateOfArrival\": \"2020-12-21\",\n    \"dateOfAdoption\": \"2021-01-22\",\n    \"animal\": {\n        \"id\": 3,\n        \"name\": \"tuffy\",\n        \"breed\": \"husky\"\n    },\n    \"owner\": {\n        \"owner_id\": 4,\n        \"owner_name\": \"divyansh\",\n        \"contact\": \"9839834921\",\n        \"address\": \"gandhi nagar\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create shelter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n       \"roomNo\": 237,\n        \"dateOfArrival\": \"2021-12-19\",\n        \"dateOfAdoption\": \"2022-11-18\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/shelter/18\n",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"shelter",
+								"18\n"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create shelter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n       \"roomNo\": 237,\n        \"dateOfArrival\": \"2021-12-19\",\n        \"dateOfAdoption\": \"2022-11-18\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/shelter/animals/7/owners/6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"shelter",
+										"animals",
+										"7",
+										"owners",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "268"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10c-4NZnQwszfSDNZuIFpsrHorMQfkk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 12:20:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Details Added successfully\",\n    \"result\": {\n        \"animal\": {\n            \"id\": 7,\n            \"name\": \"dude\",\n            \"breed\": \"german shephard\"\n        },\n        \"owner\": {\n            \"owner_id\": 6,\n            \"owner_name\": \"ajay bhalla\",\n            \"contact\": \"9384835821\",\n            \"address\": \"avantika\"\n        },\n        \"roomNo\": null,\n        \"dateOfArrival\": null,\n        \"dateOfAdoption\": null,\n        \"id\": 13\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update shelter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n          \"roomNo\": 410,\n        \"dateOfArrival\": \"2020-12-21\",\n        \"dateOfAdoption\": \"2021-01-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/shelter/7",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"shelter",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update shelter",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n          \"roomNo\": 410,\n        \"dateOfArrival\": \"2020-12-21\",\n        \"dateOfAdoption\": \"2021-01-22\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/shelter/7",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"shelter",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "268"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10c-gWs/BWN8fcJ36AFnxoweoYyNOWk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 11:50:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Updated Successfully\",\n    \"result\": {\n        \"id\": 7,\n        \"roomNo\": 410,\n        \"dateOfArrival\": \"2020-12-21\",\n        \"dateOfAdoption\": \"2021-01-22\",\n        \"animal\": {\n            \"id\": 3,\n            \"name\": \"tuffy\",\n            \"breed\": \"husky\"\n        },\n        \"owner\": {\n            \"owner_id\": 4,\n            \"owner_name\": \"divyansh\",\n            \"contact\": \"9839834921\",\n            \"address\": \"gandhi nagar\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete shelter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/shelter/13",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"shelter",
+								"13"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete shelter",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/shelter/3",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"shelter",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-klGL+s33S3QMrU/Ivcxfd4Sa4xc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 12:21:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"deleted Successfully\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://localhost:3000"
+		}
+	]
+}
