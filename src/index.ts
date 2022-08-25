@@ -1,6 +1,7 @@
-import * as  express from 'express';
+import express from 'express';
 import 'reflect-metadata';
-import swaggerDocs from './swagger';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocs from './swagger.json';
 
 import { myDataSource } from './appDataSource';
 import indexRoutes from './routes/index';
@@ -19,8 +20,8 @@ app.use('/',indexRoutes);
 
 const port =3000
 app.listen(port,()=>{
-    console.log(`Example app listening at ${port}`)
-    swaggerDocs(app,port)
+    console.log(`app listening at ${port}`)
+    app.use('/docs',swaggerUi.serve,swaggerUi.setup(swaggerDocs));
 })
 }               )
 .catch((error)=>console.log(error));
