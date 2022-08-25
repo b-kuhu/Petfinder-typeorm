@@ -134,6 +134,32 @@
                         }
                     }
                 }
+            },
+            "delete":{
+                "summary": "delete animal with a given ID",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name":"id",
+                        "required": true,
+                        "description": "delete animal with id",
+                        "schema":{
+                            "$ref":"#/components/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Animal"
+                                }
+                            }
+                        }
+                    }
+                }
             }
             
         }
