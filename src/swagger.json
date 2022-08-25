@@ -40,14 +40,35 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Animal"
+                                    "$ref": "#/components/schemas/Animal",
+                                    "type":"array"
                                 }
                             }
                         }
                         
                        }       
                 }
-            }
+            },
+            "post":{
+                "summary": "creates a new animal",
+                "requestBody":{
+                    "description": "add new animal in shelter",
+                    "required": true,
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Animal"}
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200":{
+                            "description": "OK"
+                           
+                        }
+                    }
+                }
+            
         },
         "/animals/{id}":{
             "get":{
@@ -75,10 +96,11 @@
                             }
                         }
                     }
-                }
+                 }
             }
         }
-    }
+        
+       
+    }}
 
 
-}
