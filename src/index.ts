@@ -1,6 +1,6 @@
 import * as  express from 'express';
 import 'reflect-metadata';
-//import entities
+import swaggerDocs from './swagger';
 
 import { myDataSource } from './appDataSource';
 import indexRoutes from './routes/index';
@@ -17,7 +17,10 @@ app.use(express.urlencoded({extended: false}));
 app.use('/',indexRoutes);
 
 
-app.listen(3000);
-console.log('Listening to the server on port', 3000);
+const port =3000
+app.listen(port,()=>{
+    console.log(`Example app listening at ${port}`)
+    swaggerDocs(app,port)
+})
 }               )
 .catch((error)=>console.log(error));

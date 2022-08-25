@@ -6,6 +6,31 @@ import OwnerController from '../controllers/owner.controllers';
 import ShelterController from '../controllers/shelter.controllers';
 
 //routes for animals
+/**
+ * @openapi
+ * '/animals':
+ *  get:
+ *    tags:
+ *        -animals
+ *    summary:get all animals
+ *    responses:
+ *         200:
+ *            description:Success
+ *            content:application/json:
+ *            schema:
+ *               type:array
+ *               items:
+ *                  type:object
+ *                  properties:
+ *                      id:
+ *                         type:number
+ *                      name:
+ *                         type:string
+ *                      breed:
+ *                         type:string
+ *        400:
+ *             description:Bad request
+ */
 router.get('/animals', AnimalController.getAnimal);
 router.get('/animals/:id', AnimalController.getOneAnimal);
 router.post('/animals', AnimalController.createAnimal);
