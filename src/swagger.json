@@ -9,6 +9,7 @@
             "url": "https://opensource.org/licenses/MIT"
         }
     },
+   
     "components": {
          "schemas": {
             "Animal":{
@@ -28,6 +29,26 @@
          }
            
             
+    },
+    "paths":{
+        "/animals":{
+            "get":{
+                "summary": "returns a list of animals",
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Animal"
+                                }
+                            }
+                        }
+                        
+                       }       
+                }
+            }
+        }
     }
 
 
