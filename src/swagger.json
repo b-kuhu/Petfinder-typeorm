@@ -97,7 +97,45 @@
                         }
                     }
                  }
+            },
+            "put":{
+                "summary": "update animal with a givem id",
+                "requestBody":{
+                    "description": "Animal object",
+                    "required": true,
+                    "content": {
+                        "application":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Animal"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in":"path",
+                        "name": "id",
+                        "required": true,
+                        "description": "animal with new properties",
+                        "schema":{
+                            "$ref":"#/components/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Animal"
+                                }
+                            }
+                        }
+                    }
+                }
             }
+            
         }
         
        
