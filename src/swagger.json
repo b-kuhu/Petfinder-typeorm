@@ -48,6 +48,35 @@
                        }       
                 }
             }
+        },
+        "/animals/{id}":{
+            "get":{
+                "summary": "returns an animal by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in":"path",
+                        "required": true,
+                        "description": "animal id that we want to match",
+                        "schema":{
+                            "type":"number"
+                        }
+                        
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "an animal object",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Animal/id"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
