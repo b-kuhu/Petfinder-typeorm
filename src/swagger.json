@@ -25,6 +25,43 @@
                         "type":"string"
                     }
                 }
+            },
+            "Owner":{
+                "type":"object",
+                "properties": {
+                    "owner_id":{
+                        "type": "number"
+                    },
+                    "contact":{
+                        "type": "string"
+                    },
+                    "address":{
+                        "type":"string"
+                    }
+                }
+            },
+            "Shelter":{
+                "type":"object",
+                "properties": {
+                    "id":{
+                        "type":"number"
+                    },
+                    "roomNo":{
+                        "type":"number"
+                    },
+                    "dateOfArrival":{
+                        "type": "string"
+                    },
+                    "dateOfAdoption":{
+                        "type": "string"
+                    },
+                    "animalId":{
+                        "type":"number"
+                    },
+                    "ownerId":{
+                        "type":"number"
+                    }
+                }
             }
          }
            
