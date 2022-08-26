@@ -32,6 +32,9 @@
                     "owner_id":{
                         "type": "number"
                     },
+                    "owner_name":{
+                        "type": "string"
+                    },
                     "contact":{
                         "type": "string"
                     },
@@ -83,7 +86,10 @@
                             }
                         }
                         
-                       }       
+                       } ,
+                       "404":{
+                        "description": "Not found"
+                       }     
                 }
             },
             "post":{
@@ -102,6 +108,9 @@
                         "200":{
                             "description": "OK"
                            
+                        },
+                        "400":{
+                            "description": "bad request"
                         }
                     }
                 }
@@ -117,7 +126,7 @@
                         "required": true,
                         "description": "animal id that we want to match",
                         "schema":{
-                            "type":"number"
+                            "type": "number"
                         }
                         
                     }
@@ -128,7 +137,7 @@
                         "content": {
                             "application/json":{
                                 "schema":{
-                                    "$ref":"#/components/schemas/Animal/id"
+                                   "$ref":"#/components/schemas/Animal" 
                                 }
                             }
                         }
@@ -136,7 +145,7 @@
                  }
             },
             "put":{
-                "summary": "update animal with a givem id",
+                "summary": "update animal with a given id",
                 "requestBody":{
                     "description": "Animal object",
                     "required": true,
@@ -155,7 +164,7 @@
                         "required": true,
                         "description": "animal with new properties",
                         "schema":{
-                            "$ref":"#/components/id"
+                          "type": "number"
                         }
                     }
                 ],
@@ -169,6 +178,9 @@
                                 }
                             }
                         }
+                    },
+                    "404":{
+                        "description": "animal with this id not found"
                     }
                 }
             },
@@ -181,7 +193,7 @@
                         "required": true,
                         "description": "delete animal with id",
                         "schema":{
-                            "$ref":"#/components/id"
+                           "type":"number"
                         }
                     }
                 ],
@@ -195,6 +207,9 @@
                                 }
                             }
                         }
+                    },
+                    "404":{
+                        "description": "id not found"
                     }
                 }
             }
@@ -234,6 +249,9 @@
                         "200":{
                             "description": "OK"
                            
+                        },
+                        "400":{
+                            "description": "bad post request"
                         }
                     }
                 }
@@ -260,7 +278,7 @@
                         "content": {
                             "application/json":{
                                 "schema":{
-                                    "$ref":"#/components/schemas/Shelter/id"
+                                    "$ref":"#/components/schemas/Owner"
                                 }
                             }
                         }
@@ -283,11 +301,11 @@
                 "parameters": [
                     {
                         "in":"path",
-                        "name": "id",
+                        "name": "owner_id",
                         "required": true,
                         "description": "owner with new properties",
                         "schema":{
-                            "$ref":"#/components/id"
+                            "$ref":"#/components/Owner"
                         }
                     }
                 ],
@@ -313,7 +331,7 @@
                         "required": true,
                         "description": "delete owner with id",
                         "schema":{
-                            "$ref":"#/components/id"
+                           "type":"number"
                         }
                     }
                 ],
@@ -324,6 +342,146 @@
                             "application/json":{
                                 "schema":{
                                     "$ref":"#/components/schemas/Owner"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        },
+        "/shelter":{
+            "get":{
+                "summary": "returns a list of animals and owners in shelter",
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Shelter",
+                                    "type":"array"
+                                }
+                            }
+                        }
+                        
+                       } ,
+                       "404":{
+                        "description": "Not found"
+                       }     
+                }
+            }
+            
+        },
+        "/shelter/animals/{animalId}/owner/{ownerId}":{
+            "post":{
+                "summary": "creates a new entry of animals and owners in shelter",
+                "requestBody":{
+                    "description": "add details of animals and owners",
+                    "required": true,
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Shelter"}
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200":{
+                            "description": "OK"
+                           
+                        },
+                        "400":{
+                            "description": "bad request"
+                        }
+                    }
+                }   
+        },
+        "/shelter/{id}":{
+            "get":{
+                "summary": "returns an shelter by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in":"path",
+                        "required": true,
+                        "description": "shelter id that we want to match",
+                        "schema":{
+                            "type":"number"
+                        }
+                        
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "a shelter object",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Shelter"
+                                }
+                            }
+                        }
+                    }
+                 }
+            },
+            "put":{
+                "summary": "update shelter with a given id",
+                "requestBody":{
+                    "description": "shelter object",
+                    "required": true,
+                    "content": {
+                        "application":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Shelter"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in":"path",
+                        "name": "id",
+                        "required": true,
+                        "description": "shelter with new properties",
+                        "schema":{
+                            "type":"number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Shelter"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "summary": "delete shelter with a given ID",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name":"id",
+                        "required": true,
+                        "description": "delete shelter with id",
+                        "schema":{
+                           "type":"number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Shelter"
                                 }
                             }
                         }
