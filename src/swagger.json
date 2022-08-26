@@ -199,9 +199,143 @@
                 }
             }
             
+        },
+        "/owners":{
+            "get":{
+                "summary": "returns a list of owners",
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Owner",
+                                    "type":"array"
+                                }
+                            }
+                        }
+                        
+                       }       
+                }
+            },
+            "post":{
+                "summary": "creates a new owner",
+                "requestBody":{
+                    "description": "add new owner in owner",
+                    "required": true,
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Owner"}
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200":{
+                            "description": "OK"
+                           
+                        }
+                    }
+                }
+            
+        },
+        "/owners/{id}":{
+            "get":{
+                "summary": "returns an owner by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in":"path",
+                        "required": true,
+                        "description": "owner id that we want to match",
+                        "schema":{
+                            "type":"number"
+                        }
+                        
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "an owner object",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Shelter/id"
+                                }
+                            }
+                        }
+                    }
+                 }
+            },
+            "put":{
+                "summary": "update shelter with a givem id",
+                "requestBody":{
+                    "description": "Owner object",
+                    "required": true,
+                    "content": {
+                        "application":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Owner"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in":"path",
+                        "name": "id",
+                        "required": true,
+                        "description": "owner with new properties",
+                        "schema":{
+                            "$ref":"#/components/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Owner"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "summary": "delete owner with a given ID",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name":"id",
+                        "required": true,
+                        "description": "delete owner with id",
+                        "schema":{
+                            "$ref":"#/components/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "OK",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Owner"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
         }
         
        
-    }}
+    }
+
+}
 
 
