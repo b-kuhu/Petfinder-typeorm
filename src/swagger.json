@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "version": "1.0.0",
-        "title": "Petfinder api",
+        "title": "Petfinder ",
         "description": "A CRUD API using Typeorm and TypeScript",
         "license": {
             "name": "MIT",
@@ -145,45 +145,61 @@
                  }
             },
             "put":{
-                "summary": "update animal with a given id",
-                "requestBody":{
-                    "description": "Animal object",
-                    "required": true,
-                    "content": {
-                        "application":{
-                            "schema":{
-                                "$ref":"#/components/schemas/Animal"
-                            }
-                        }
-                    }
-                },
+                "summary": "updates an animal",
                 "parameters": [
                     {
-                        "in":"path",
                         "name": "id",
+                        "in":"path",
                         "required": true,
-                        "description": "animal with new properties",
+                        "description": "animal id that we want to match",
                         "schema":{
-                          "type": "number"
+                            "type": "number"
                         }
+                        
+                    },
+
+                    {
+                        "name": "name",
+                        "in":"body",
+                        "required": true,
+                        "description": "animal id that we want to match",
+                        "schema":{
+                            "type": "string"
+                        }
+                        
+                    },
+                    {
+                        "name": "breed",
+                        "in":"body",
+                        "required": true,
+                        "description": "animal id that we want to match",
+                        "schema":{
+                            "type": "string"
+                        }
+                        
                     }
                 ],
-                "responses": {
-                    "200":{
-                        "description": "OK",
-                        "content": {
-                            "application/json":{
-                                "schema":{
-                                    "$ref":"#/components/schemas/Animal"
-                                }
+                "requestBody":{
+                    "description": "animal updated",
+                    "required": true,
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Animal"}
                             }
                         }
                     },
-                    "404":{
-                        "description": "animal with this id not found"
+                    "responses": {
+                        "200":{
+                            "description": "OK"
+                           
+                        },
+                        "400":{
+                            "description": "bad request"
+                        }
                     }
                 }
-            },
+            ,
             "delete":{
                 "summary": "delete animal with a given ID",
                 "parameters": [
@@ -305,7 +321,7 @@
                         "required": true,
                         "description": "owner with new properties",
                         "schema":{
-                            "$ref":"#/components/Owner"
+                            "type":"number"
                         }
                     }
                 ],

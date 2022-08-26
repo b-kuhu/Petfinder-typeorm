@@ -26,11 +26,13 @@ class AnimalController {
   };
   static updateAnimal = async (req: Request, res: Response) => {
   
-
+   console.log(req.body);
     const data = await myDataSource.getRepository(Animal).findOne({where: {id: parseInt(req.params.id, 10)}});
+    
     if (data) {
       const value = await animalSchema.validateAsync(req.body);
       console.log(value);
+      
       myDataSource.getRepository(Animal).merge(data, req.body);
       const result = await myDataSource.getRepository(Animal).save(data);
       return res.json(result);
